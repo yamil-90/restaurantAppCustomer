@@ -23,6 +23,9 @@ const App = () => {
     <>
       <FirebaseState>
         <OrdersState>
+
+         
+
           <NavigationContainer>
             <Stack.Navigator
               initialRouteName='menu'
@@ -79,6 +82,7 @@ const App = () => {
               />
             </Stack.Navigator>
           </NavigationContainer>
+      
         </OrdersState>
       </FirebaseState>
     </>
