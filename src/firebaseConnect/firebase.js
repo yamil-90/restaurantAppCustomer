@@ -6,9 +6,12 @@ class Firebase{
     constructor(){
         if(!app.apps.length){
             app.initializeApp(firebaseConfig)
-            
+
         }
-        this.db = app.firestore()
+        const firestore = app.firestore()
+        firestore.settings({ experimentalForceLongPolling: true, merge:true });
+
+        this.db = firestore;
     }
 }
 const firebase = new Firebase()

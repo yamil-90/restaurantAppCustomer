@@ -2,7 +2,9 @@ import React, {useReducer} from 'react';
 
 import FirebaseReducer from './firebaseReducer';
 import FirebaseContext from './firebaseContext';
-import firebase from '../firebaseConnect'
+import firebase from '../firebaseConnect';
+
+import {sortBy} from 'lodash'
 
 import { GET_PRODUCTS_SUCCESS } from '../types'
 
@@ -16,7 +18,7 @@ const [state, dispatch] = useReducer(FirebaseReducer, initialState)
 
 //create a function to get the products
 const getProducts =  ()=>{
-    firebase.db.settings({ experimentalForceLongPolling: true });
+    
     // we make arequest to firebase
 
      firebase.db
@@ -33,6 +35,10 @@ const getProducts =  ()=>{
                 ...doc.data()
             }
         });
+        // order by category using lodash
+        dishes = sortBy(dishes, 'category')
+
+        
      
         dispatch({
             type: GET_PRODUCTS_SUCCESS,

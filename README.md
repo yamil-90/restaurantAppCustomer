@@ -25,10 +25,31 @@ export NODE_OPTIONS=--openssl-legacy-provider
 
 ## Solving the "Backend didn't respond within 10 seconds" error from firebase
 
-we need to add the following option to the firebasestate.js file
+we need to add the following option to the firebase.js file
 
 ```
 firebase.db.settings({ experimentalForceLongPolling: true })
+```
+the whole code looks like this 
+```
+import app from 'firebase/compat/app';
+import firebaseConfig from './config';
+import 'firebase/compat/firestore';
+
+class Firebase{
+    constructor(){
+        if(!app.apps.length){
+            app.initializeApp(firebaseConfig)
+
+        }
+        const firestore = app.firestore()
+        firestore.settings({ experimentalForceLongPolling: true, merge:true });
+
+        this.db = firestore;
+    }
+}
+const firebase = new Firebase()
+export default firebase;
 ```
 
 ## Things to improve
