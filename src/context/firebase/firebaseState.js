@@ -2,11 +2,11 @@ import React, {useReducer} from 'react';
 
 import FirebaseReducer from './firebaseReducer';
 import FirebaseContext from './firebaseContext';
-import firebase from '../firebaseConnect';
+import firebase from '../../firebaseConnect';
 
 import {sortBy} from 'lodash'
 
-import { GET_PRODUCTS_SUCCESS } from '../types'
+import { GET_PRODUCTS_SUCCESS } from '../../types'
 
 const FirebaseState = props =>{
 // we create the initial state

@@ -7,7 +7,7 @@ const globalStyles = StyleSheet.create({
     },
     content:{
         flex:1,
-        marginHorizontal:'2.5%'
+        marginHorizontal:'2.5%',
     },
     btn:{
         backgroundColor:'#FFDA00',
@@ -19,7 +19,17 @@ const globalStyles = StyleSheet.create({
     btnText:{
         textTransform:'uppercase',
         fontWeight:'bold',
-
+    },
+    title:{
+        textAlign: 'center',
+        marginTop:40,
+        marginBottom: 20,
+        fontSize:30
+    },
+    amount:{
+        fontWeight:'700',
+        fontSize:24,
+        marginVertical:20
     }
 })
 

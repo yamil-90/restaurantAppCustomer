@@ -15,8 +15,8 @@ const Stack = createNativeStackNavigator()
 
 
 // here we import the state from context
-import FirebaseState from './src/firebase/firebaseState';
-import OrdersState from './src/orders/ordersState';
+import FirebaseState from './src/context/firebase/firebaseState';
+import OrdersState from './src/context/orders/ordersState';
 
 const App = () => {
   return (
